@@ -3,10 +3,8 @@ package day1
 //output.
 object ReturnTypes extends App {
 
-  def helloWorld(hello:String) = {
-    "Hello World!"
-  }
+  def helloWorld() = {"Hello World!"}
 
-  println(helloWorld(""))
+  println(helloWorld())
 
 }
