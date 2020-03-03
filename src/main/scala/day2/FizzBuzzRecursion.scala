@@ -16,9 +16,8 @@ object FizzBuzzRecursion extends App {
       println(num)
     }
 
-    val newNum = num - 1
     if (num > 1) {
-      fizzBuzzRecursion(strOne, strTwo, newNum)
+      fizzBuzzRecursion(strOne, strTwo, num-1)
     }
   }
 
