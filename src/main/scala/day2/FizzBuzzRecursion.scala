@@ -1,6 +1,6 @@
 package day2
 // Rewrite your previous three iteration exercises but using method recursion, no loops
-//involved.
+// involved.
 object FizzBuzzRecursion extends App {
 
   def fizzBuzzRecursion(strOne:String,strTwo:String,num:Int):Unit ={
