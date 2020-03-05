@@ -7,9 +7,7 @@ object LuhnCreditCardCheck extends App {
     var cardArr = cardNo.toString.toCharArray
     var cardNoLength = cardArr.length
     var cardArrRev = cardArr.reverse
-
     var sum = 0
-
 
     for (i <- 0 until cardNoLength by 2){
 
