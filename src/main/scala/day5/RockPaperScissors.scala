@@ -6,14 +6,9 @@ package day5
 
 object RockPaperScissors extends App {
 
-  val rock = "Rock"
-  val paper = "Paper"
-  val scissors = "Scissors"
-  var wins = 0
-  var losses = 0
-  var rCount = 0
-  var pCount = 0
-  var sCount = 0
+  val rock = "Rock"; val paper = "Paper"; val scissors = "Scissors"
+  var wins = 0; var losses = 0
+  var rCount = 0; var pCount = 0; var sCount = 0
   var comPick = ""
 
 
@@ -58,9 +53,7 @@ object RockPaperScissors extends App {
         case "Paper" => println("Computers paper covers your rock, you lose!"); losses += 1
         case "Scissors" => println("Your rock blunts computer's scissors, you win!"); wins += 1
       }
-      rCount += 1;
-      pCount = 0;
-      sCount = 0;
+      rCount += 1; pCount = 0; sCount = 0;
     }
     else if (pick == paper) {
       comPick match {
@@ -68,9 +61,7 @@ object RockPaperScissors extends App {
         case "Paper" => println("Its a draw!")
         case "Scissors" => println("Computers scissors cut your paper, you lose!"); losses += 1
       }
-      rCount = 0;
-      pCount += 1;
-      sCount = 0;
+      rCount = 0; pCount += 1; sCount = 0;
     }
     else if (pick == scissors) {
       comPick match {
@@ -78,9 +69,7 @@ object RockPaperScissors extends App {
         case "Paper" => println("Your scissors cut computer's paper, you win!"); wins += 1
         case "Scissors" => println("It's a draw!")
       }
-      rCount = 0;
-      pCount = 0;
-      sCount += 1;
+      rCount = 0; pCount = 0; sCount += 1;
     }
     println
   }
