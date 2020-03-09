@@ -39,7 +39,7 @@ object RockPaperScissors extends App {
     comPick
   }
 
-  def playerVsAI(): Unit = {
+  def playerVsAI(): String = {
     val pick = playerPick()
     AIChoice()
 
@@ -48,51 +48,55 @@ object RockPaperScissors extends App {
     println(s"Computer picked $comPick");
     println
 
+    var response = ""
+
     if (pick == rock) {
       comPick match {
-        case "Rock" => println("Its a draw!")
-        case "Paper" => println("Computers paper covers your rock, you lose!"); losses += 1
-        case "Scissors" => println("Your rock blunts computer's scissors, you win!"); wins += 1
+        case "Rock" => response = "Its a draw!"
+        case "Paper" => response = "Computers paper covers your rock, you lose!"; losses += 1
+        case "Scissors" => response = "Your rock blunts computer's scissors, you win!"; wins += 1
       }
       rCount += 1; pCount = 0; sCount = 0;
     }
     else if (pick == paper) {
       comPick match {
-        case "Rock" => println("Your paper covers Computer's rock, you win!"); wins += 1
-        case "Paper" => println("Its a draw!")
-        case "Scissors" => println("Computers scissors cut your paper, you lose!"); losses += 1
+        case "Rock" => response = "Your paper covers Computer's rock, you win!"; wins += 1
+        case "Paper" => response = "Its a draw!"
+        case "Scissors" => response = "Computers scissors cut your paper, you lose!"; losses += 1
       }
       rCount = 0; pCount += 1; sCount = 0;
     }
     else if (pick == scissors) {
       comPick match {
-        case "Rock" => println("Computer's rock blunts your scissors, you lose!"); losses += 1
-        case "Paper" => println("Your scissors cut computer's paper, you win!"); wins += 1
-        case "Scissors" => println("It's a draw!")
+        case "Rock" => response = "Computer's rock blunts your scissors, you lose!"; losses += 1
+        case "Paper" => response = "Your scissors cut computer's paper, you win!"; wins += 1
+        case "Scissors" => response = "It's a draw!"
       }
       rCount = 0; pCount = 0; sCount += 1;
     }
-    println
+    response
   }
 
-  def playPlayerVsAI(): Unit = {
+  def playPlayerVsAI(): String = {
     var win = true
+    var result = ""
 
     while (win) {
-      playerVsAI()
+      println(playerVsAI())
       println(s"Wins: $wins/10 Losses: $losses/10");
       println
 
       if (wins == 10) {
-        println("You win the game!")
+        result = "You win the game!"
         win = false
       }
       else if (losses == 10) {
-        println("Computer: better luck next time scrub")
+        result = "Computer: better luck next time scrub"
         win = false
       }
     }
+    result
   }
 
-  playPlayerVsAI()
+  println(playPlayerVsAI())
 }
