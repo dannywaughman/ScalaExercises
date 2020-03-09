@@ -23,7 +23,8 @@ object RockPaperScissors extends App {
 
   def playerPick(): String = {
     println("Rock, paper or scissors?")
-    scala.io.StdIn.readLine().toLowerCase() match {
+    val m = scala.io.StdIn.readLine().toLowerCase()
+    m match {
       case "rock" => rock
       case "paper" => paper
       case "scissors" => scissors

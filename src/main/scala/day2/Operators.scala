@@ -5,7 +5,11 @@ object Operators extends App {
   def add (a:Int,b:Int):Int = {
     a + b
   }
+  def multiply(a:Int,b:Int):Int = {
+    a * b
+  }
 
   println(add(10,20))
+  println(multiply(5,6))
 
 }
