@@ -1,5 +1,6 @@
-package day1
+package day1tests
 
+import day1.AddMult
 import org.scalatest.FunSuite
 
 class AddMultTest extends FunSuite{
