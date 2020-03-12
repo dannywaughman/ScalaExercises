@@ -7,13 +7,13 @@ import scala.collection.mutable.ListBuffer
 
 object BattleShips extends App {
 
-  val Grid = Array.ofDim[String](13,13)
+  val Grid = Array.ofDim[String](10,10)
   Grid(0)(0) = "   "
 
-  for (i<-1 to 12) {
+  for (i<-1 to 9) {
     Grid(0)(i) = i.toString + "  "
     Grid(i)(0) = i.toString + "  "
-    for (j <- 1 to 12) {
+    for (j <- 1 to 9) {
       Grid(j)(i) = "-  "
     }
   }
@@ -32,9 +32,9 @@ object BattleShips extends App {
 
   def patrolPlacement():Unit = {
 
-    println("Enter start x coordinate for 1x2 patrol boat in the 12x12 grid: ")
+    println("Enter start x coordinate for 1x2 patrol boat in the 9x9 grid: ")
     val patrolOneX = scala.io.StdIn.readInt()
-    println("Enter start y coordinate for 1x2 patrol boat in the 12x12 grid: ")
+    println("Enter start y coordinate for 1x2 patrol boat in the 9x9 grid: ")
     val patrolOneY = scala.io.StdIn.readInt()
     println("Enter final x coordinate: ");
     val patrolOneXFin = scala.io.StdIn.readInt()
@@ -44,9 +44,9 @@ object BattleShips extends App {
     val patrolOneStart = Grid(patrolOneX)(patrolOneY)
     val patrolOneFin = Grid(patrolOneXFin)(patrolOneYFin)
 
-    println("Enter start coordinates for your second 1x2 patrol boat in the 12x12 grid: ")
+    println("Enter start coordinates for your second 1x2 patrol boat in the 9x9 grid: ")
     val patrolTwoX = scala.io.StdIn.readInt()
-    println("Enter start y coordinate for 1x2 patrol boat in the 12x12 grid: ")
+    println("Enter start y coordinate for 1x2 patrol boat in the 9x9 grid: ")
     val patrolTwoY = scala.io.StdIn.readInt()
     println("Enter final x coordinate: ");
     val patrolTwoXFin = scala.io.StdIn.readInt()
@@ -105,8 +105,8 @@ object BattleShips extends App {
       println
 
 
-      if (0 > xCord || xCord > 12 || 0 > yCord || yCord > 12) {
-        println("Please only enter coordinates within the 12x12 grid.");
+      if (0 > xCord || xCord > 9 || 0 > yCord || yCord > 9) {
+        println("Please only enter coordinates within the 9x9 grid.");
         println
       }
 

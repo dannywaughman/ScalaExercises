@@ -2,12 +2,13 @@ package day4
 
 object LuhnCreditCardCheck extends App {
 
-  def Luhn(cardNo:Long):Unit = {
+  def Luhn(cardNo:Long):Boolean = {
 
     var cardArr = cardNo.toString.toCharArray
     var cardNoLength = cardArr.length
     var cardArrRev = cardArr.reverse
     var sum = 0
+    var bool = true
 
     for (i <- 0 until cardNoLength by 2){
 
@@ -35,15 +36,15 @@ object LuhnCreditCardCheck extends App {
     }
 
     if (sum % 10 == 0){
-      println("This is a valid card!")
+      bool = true
     } else {
-      println("This is not a valid card!")
+      bool = false
     }
-    println(sum)
+    bool
 
   }
 
-  Luhn(49927398716L)
-  Luhn(48936798214L)
-  Luhn(2323200577663554L)
+  println(Luhn(49927398716L))
+  println(Luhn(48936798214L))
+  println(Luhn(2323200577663554L))
 }
