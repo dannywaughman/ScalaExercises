@@ -19,6 +19,7 @@ object BlackJack extends App {
   var cardCount = 51
   var game = true
   var winCount = 0
+  var drawCount = 2
 
   for (i <- 1 to 9) {
     cardList += (i, i, i, i)
@@ -93,6 +94,7 @@ object BlackJack extends App {
   }
 
   def hit(): Unit = {
+    drawCount += 1
     val r3 = new scala.util.Random
     var hitCard = cardList(r3.nextInt(cardCount))
     cardCount -= 1
@@ -120,6 +122,10 @@ object BlackJack extends App {
 
   def choice(): Unit = {
 
+    if (drawCount == 5) {
+      println("You have the maximum 5 cards on the table!")
+      result()
+    }
     println("Stick or twist?")
     val decision = scala.io.StdIn.readLine().toLowerCase()
 
@@ -158,6 +164,7 @@ object BlackJack extends App {
 
   def gameLoop(): Unit = {
 
+    drawCount = 2
     dealerCards()
     println()
     playerCards()
