@@ -3,7 +3,7 @@ package day2tests
 import day2.Operators
 import org.scalatest.FunSuite
 
-class OperatorsTest extends FunSuite{
+class OperatorsTest extends FunSuite {
 
   test("add.testOne"){
     assert(Operators.add(10,20) === 30)
