@@ -140,7 +140,8 @@ object BlackJack extends App {
 
     if (drawCount == 5) {
       println("You have the maximum 5 cards on the table!")
-      result()
+      println(s"Dealer's cards: $firstCompCard and $secondCompCard. Total: $dealerTotal ")
+      dealerHit()
     }
     println("Stick or twist?")
     val decision = scala.io.StdIn.readLine().toLowerCase()
